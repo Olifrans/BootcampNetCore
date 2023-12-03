@@ -8,7 +8,5 @@ public class Curso
     public System.DateTime? DataDePublicacao{get; set;}
     
     // public byte? FotoDeCapa{get; set;}
-
-
 }
 
