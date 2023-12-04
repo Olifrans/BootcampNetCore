@@ -11,8 +11,6 @@ using Microsoft.EntityFrameworkCore;
 // 	f => f.MigrationsAssembly(typeof(CursoDbContext).Assembly.FullName)));
 
 
-
-
 using (var db = new CursoDbContext())
 {
     var cursos = db.Curso.AsNoTracking(); //Array IQueryable -> de objetos
@@ -21,3 +19,4 @@ using (var db = new CursoDbContext())
         Console.WriteLine(curso.Titulo + "-------------"+ curso.Descricao + "-------------"+ curso.DataDePublicacao);
     }
 }
+
