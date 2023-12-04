@@ -13,10 +13,24 @@ using Microsoft.EntityFrameworkCore;
 
 using (var db = new CursoDbContext())
 {
-    var cursos = db.Curso.AsNoTracking(); //Array IQueryable -> de objetos
+
+    //// Código para obter dados da tabela curso
+    // var cursos = db.Curso.AsNoTracking(); //Array IQueryable -> de objetos
+    // foreach (var curso in cursos)
+    // {
+    //     Console.WriteLine(curso.Titulo + "-------------"+ curso.Descricao + "-------------"+ curso.DataDePublicacao);
+    // }
+
+
+    //Código para obter dados da tabela curso e preço
+    var cursos = db.Curso.Include(f => f.PrecoPromocao).AsNoTracking();
     foreach (var curso in cursos)
     {
-        Console.WriteLine(curso.Titulo + "-------------"+ curso.Descricao + "-------------"+ curso.DataDePublicacao);
+        Console.WriteLine(curso.Titulo + "-------------" + curso.Descricao + "-------------" + curso.DataDePublicacao + "-------------" + curso.PrecoPromocao?.PrecoAtual);
     }
+
+
+
+
 }
 

@@ -32,6 +32,7 @@ public class CursoDbContext : DbContext
         // base.OnConfiguring(optionsBuilder);
     }
     public DbSet<Curso> Curso { get; set; }
+    public DbSet<Preco> Preco { get; set; }
 
 
 }

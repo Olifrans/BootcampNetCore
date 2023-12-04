@@ -8,7 +8,7 @@ public class Preco
 
     public int CursoId { get; set; }
 
-    //Relação de Preços e Cursos
+    //Relação de Preços e Cursos (1--1)
     public Curso? Curso { get; set; }
 }
 
