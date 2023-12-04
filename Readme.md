@@ -44,6 +44,10 @@ REFERENCES Curso(CursoId);
 
 
 
+ALTER TABLE Comentario
+ADD CONSTRAINT FK_Comentario_Curso
+FOREIGN KEY (CursoId)
+REFERENCES Curso(CursoId);
 
 
 
