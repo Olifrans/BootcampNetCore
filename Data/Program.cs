@@ -22,15 +22,24 @@ using (var db = new CursoDbContext())
     // }
 
 
-    //Código para obter dados da tabela curso e preço
-    var cursos = db.Curso.Include(f => f.PrecoPromocao).AsNoTracking();
+    ////Código para obter dados da tabela curso e preço
+    // var cursos = db.Curso.Include(f => f.PrecoPromocao).AsNoTracking();
+    // foreach (var curso in cursos)
+    // {
+    //     Console.WriteLine(curso.Titulo + "-------------" + curso.Descricao + "-------------" + curso.DataDePublicacao + "-------------" + curso.PrecoPromocao?.PrecoAtual);
+    // }
+
+
+
+    //Código para obter dados da tabela curso e comentario
+    var cursos = db.Curso.Include(c => c.ListaDeComentarios).AsNoTracking();
     foreach (var curso in cursos)
     {
-        Console.WriteLine(curso.Titulo + "-------------" + curso.Descricao + "-------------" + curso.DataDePublicacao + "-------------" + curso.PrecoPromocao?.PrecoAtual);
+        // Console.WriteLine(curso.Titulo);
+        Console.WriteLine(curso.Titulo + "-------------" + curso.Descricao + "-------------" + curso.DataDePublicacao + "-------------" + curso.PrecoPromocao?.PrecoAtual);     
+        foreach (var comentario in curso.ListaDeComentarios){
+            Console.WriteLine("-------------" + comentario.ComentarioTexto );           
+        }
     }
-
-
-
-
 }
 

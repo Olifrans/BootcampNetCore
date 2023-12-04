@@ -44,11 +44,17 @@ REFERENCES Curso(CursoId);
 
 
 
+CREATE TABLE Comentario(
+	ComentarioId int IDENTITY(1,1) NOT NULL,
+	Aluno nvarchar(300) NULL,
+	Pontuacao int NULL,
+	ComentarioTexto nvarchar (max) NULL,
+	CursoId int NULL,
+);
+
 ALTER TABLE Comentario
 ADD CONSTRAINT FK_Comentario_Curso
-FOREIGN KEY (CursoId)
-REFERENCES Curso(CursoId);
-
+	FOREIGN KEY (CursoId) REFERENCES Curso(CursoId);
 
 
 

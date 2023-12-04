@@ -34,6 +34,10 @@ public class CursoDbContext : DbContext
     public DbSet<Curso> Curso { get; set; }
     public DbSet<Preco> Preco { get; set; }
 
+    public DbSet<Comentario> Comentario { get; set; }
+
 
 }
+
+
 

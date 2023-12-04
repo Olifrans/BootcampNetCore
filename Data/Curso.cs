@@ -1,3 +1,10 @@
+using System.Security.AccessControl;
+
+using System;
+// using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Collections.Generic;
+
 namespace BootcampNetCore;
 
 public class Curso
@@ -10,5 +17,6 @@ public class Curso
 
     
     public Preco? PrecoPromocao{get; set;}
+    public ICollection<Comentario?> ListaDeComentarios{get; set;}
 }
 
